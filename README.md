@@ -26,8 +26,17 @@
 1. Version the project:
     1. `yarn version --new-version 0.0.1`
     1. `git push --tags`
-1.
+1. Publish the project
+    1. `npm publish`
+
+Observe that the project was published to the org's namespace.
+
 
 ## Modify an existing project to have an org scope
 
 1.
+
+## References
+
+* [https://docs.npmjs.com/creating-and-publishing-an-org-scoped-package](https://docs.npmjs.com/creating-and-publishing-an-org-scoped-package)
+* [https://docs.npmjs.com/configuring-your-npm-client-with-your-org-settings](https://docs.npmjs.com/configuring-your-npm-client-with-your-org-settings)
