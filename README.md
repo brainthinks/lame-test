@@ -1,4 +1,14 @@
-# LAME
+# LAME <!-- omit in toc -->
+
+Informal notes on working with org-scoped projects in the npm registry.
+
+
+## Table of Contents <!-- omit in toc -->
+
+- [Create a new org-scoped project](#create-a-new-org-scoped-project)
+- [Modify an existing project to have an org scope](#modify-an-existing-project-to-have-an-org-scope)
+- [References](#references)
+
 
 ## Create a new org-scoped project
 
