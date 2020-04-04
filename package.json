@@ -4,6 +4,9 @@
   "main": "index.js",
   "repository": "https://github.com/brainthinks/lame-test.git",
   "license": "MIT",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "rm -rf dist && mkdir dist && touch dist/npmpublishkeep.txt",
     "prepublish": "npm run build",
