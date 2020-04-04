@@ -34,7 +34,16 @@ Observe that the project was published to the org's namespace.
 
 ## Modify an existing project to have an org scope
 
-1.
+1. Add the `.npmrc` file that contains the `scope` and `access` configurations
+1. Add the `repository` property to the `package.json` file, where the value is the git url
+    1. e.g. `"repository": "https://github.com/brainthinks/lame-test.git",`
+1. Find all instances in the project where the `name` property from the `package.json` is used
+    1. You may need to change them from `name` to `name.split('/').pop()`
+1. Commit and push all changes
+1. Version the project:
+    1. `yarn version --new-version 0.0.1`
+1. Publish the project
+    1. `npm publish`
 
 ## References
 
