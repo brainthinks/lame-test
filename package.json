@@ -1,0 +1,7 @@
+{
+  "name": "lame",
+  "version": "0.0.1",
+  "main": "index.js",
+  "repository": "https://github.com/brainthinks/lame-test.git",
+  "license": "MIT"
+}
