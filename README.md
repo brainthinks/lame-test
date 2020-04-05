@@ -7,6 +7,7 @@ Informal notes on working with org-scoped projects in the npm registry.
 
 - [Create a new org-scoped project](#create-a-new-org-scoped-project)
 - [Modify an existing project to have an org scope](#modify-an-existing-project-to-have-an-org-scope)
+- [Publish `dist` or other untracked files](#publish-dist-or-other-untracked-files)
 - [References](#references)
 
 
@@ -55,7 +56,26 @@ Observe that the project was published to the org's namespace.
 1. Publish the project
     1. `npm publish`
 
+
+## Publish `dist` or other untracked files
+
+We have a few projects that have build steps which result in `dist` (as opposed to `src`) files that need to be included with the published version of the project.  Here are the steps I used to implement the build and clean-up steps as part of the publish lifecycle:
+
+1. add `dist` to your `.gitignore`:
+    1. the `dist` files shouldn't be source-controlled
+    1. the `dist` files will be version-controlled via npm packages
+1. add a `prepublish` script:
+    1. e.g. `"prepublish": "npm run build",`
+1. add a `postpublish` script:
+    1. e.g. `"postpublish": "rm -rf dist",`
+1. Create a `.npmignore` file
+    1. `cp .gitignore .npmignore`
+    1. remove the `dist` entry from `.npmignore`
+    1. you will have to keep `.npmignore` maintained along with `.gitignore` now...
+
+
 ## References
 
 * [https://docs.npmjs.com/creating-and-publishing-an-org-scoped-package](https://docs.npmjs.com/creating-and-publishing-an-org-scoped-package)
 * [https://docs.npmjs.com/configuring-your-npm-client-with-your-org-settings](https://docs.npmjs.com/configuring-your-npm-client-with-your-org-settings)
+* [https://stackoverflow.com/questions/31642477/how-to-publish-a-npm-package-with-distribution-files](https://stackoverflow.com/questions/31642477/how-to-publish-a-npm-package-with-distribution-files)
